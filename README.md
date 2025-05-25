@@ -61,10 +61,10 @@ freelancer-app/
 │   ├── public/
 │   ├── src/
 |   |   ├── components/
-│   │   ├── pages/
-│   │   ├── hooks/
-│   │   ├── services/
-│   │   ├── App.jsx
+|   |   ├── pages/
+|   |   ├── hooks/
+|   |   ├── services/
+|   |   ├── App.jsx
 |   |   ├── main.jsx
 |   |   ├── style.css
 |   |   └── assets/
