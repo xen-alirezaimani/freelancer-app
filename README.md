@@ -60,7 +60,7 @@ freelancer-app/
 ├── freelancer-app-frontend/
 │   ├── public/
 │   ├── src/
-│   │   ├── components/
+|   |   ├── components/
 │   │   ├── pages/
 │   │   ├── hooks/
 │   │   ├── services/
