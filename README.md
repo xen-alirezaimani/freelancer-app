@@ -46,6 +46,7 @@
 
 
 ### ساختار پروژه 
+```bash
 freelancer-app/
 ├── client/             # رابط کاربری (فرانت‌اند با React + Vite)
 │   ├── src/
@@ -64,6 +65,7 @@ freelancer-app/
 │   └── server.js              # نقطه ورود سرور
 │
 └── README.md           # توضیحات پروژه
+
 
 ### کلون کردن مخزن
 
