@@ -43,11 +43,7 @@
 - MongoDB باید در حال اجرا باشد یا URI اتصال آن را در فایل `.env` قرار دهید.
 - توکن و اطلاعات سرویس **کاوه‌نگار** برای ارسال پیامک لاگین
 
-### ۱. کلون کردن مخزن
 
-```bash
-git clone https://github.com/your-username/freelancer-app.git
-cd freelancer-app
 
 ### ساختار پروژه 
 freelancer-app/
@@ -69,3 +65,8 @@ freelancer-app/
 │
 └── README.md           # توضیحات پروژه
 
+### کلون کردن مخزن
+
+```bash
+git clone https://github.com/your-username/freelancer-app.git
+cd freelancer-app
