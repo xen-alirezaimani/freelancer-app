@@ -34,6 +34,8 @@
 - [MongoDB](https://www.mongodb.com/)
 
 ## ⚙️ نحوه اجرا
+- RUN BACKEND => npm run start
+- RUN FRONTEND => npm run dev
 
 ### پیش‌نیازها
 
