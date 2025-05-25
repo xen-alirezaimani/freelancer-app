@@ -39,9 +39,9 @@
 
 ### پیش‌نیازها
 
-- Node.js و npm باید روی سیستم نصب باشند.
-- MongoDB باید در حال اجرا باشد یا URI اتصال آن را در فایل `.env` قرار دهید.
-- توکن و اطلاعات سرویس **کاوه‌نگار** برای ارسال پیامک لاگین
+- Node.js, npm
+- MongoDB
+- Kave Neghar API for send login message
 
 
 
@@ -69,6 +69,5 @@ freelancer-app/
 
 ### کلون کردن مخزن
 
-```bash
 git clone https://github.com/your-username/freelancer-app.git
 cd freelancer-app
