@@ -49,6 +49,7 @@
 git clone https://github.com/your-username/freelancer-app.git
 cd freelancer-app
 
+### ساختار پروژه 
 freelancer-app/
 ├── client/             # رابط کاربری (فرانت‌اند با React + Vite)
 │   ├── src/
