@@ -36,13 +36,12 @@
 - [MongoDB](https://www.mongodb.com/)
 
 ## ⚙️ نحوه اجرا
-- RUN BACKEND =>
+### RUN BACKEND =>
 - cd freelancer-app-backend
 - npm install
 - npm run start
-###
-###
-- RUN FRONTEND =>
+
+### RUN FRONTEND =>
 - cd freelancer-app-frontend
 - npm install
 - npm run dev
