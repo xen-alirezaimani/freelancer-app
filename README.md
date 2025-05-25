@@ -48,23 +48,27 @@
 ### ساختار پروژه 
 ```bash
 freelancer-app/
-├── client/             # رابط کاربری (فرانت‌اند با React + Vite)
+├── freelancer-app-frontend/
+│   ├── public/
 │   ├── src/
-│   │   ├── components/         # کامپوننت‌های عمومی
-│   │   ├── pages/              # صفحات (پنل‌ها، لاگین، ثبت‌نام و ...)
-│   │   ├── hooks/              # هوک‌های سفارشی (از جمله React Query)
-│   │   ├── services/           # فانکشن‌های API برای فچ داده
-│   │   └── App.jsx
-│   └── tailwind.config.js      # پیکربندی Tailwind
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   ├── App.jsx
+|   |   ├── main.jsx
+|   |   ├── style.css
+|   |   └── assets/
+│   └── index.html
 │
-├── server/             # بک‌اند با Node.js و Express
+├── freelancer-app-backend/     # backend
 │   ├── controllers/            # کنترلرهای مربوط به API
 │   ├── models/                 # مدل‌های Mongoose
 │   ├── routes/                 # مسیرهای API
-│   ├── middlewares/           # میدلورها (احراز هویت، رول‌ها و ...)
-│   └── server.js              # نقطه ورود سرور
+│   ├── middlewares/            # میدلورها (احراز هویت، رول‌ها و ...)
+│   └── server.js               # نقطه ورود سرور
 │
-└── README.md           # توضیحات پروژه
+└── README.md                   # project readme
 
 
 ### کلون کردن مخزن
