@@ -20,7 +20,7 @@
 
 ## 🛠️ تکنولوژی‌های استفاده شده
 
-### فرانت‌اند
+## فرانت‌اند
 
 - [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
@@ -37,7 +37,7 @@
 - RUN BACKEND => npm run start
 - RUN FRONTEND => npm run dev
 
-### پیش‌نیازها
+## پیش‌نیازها
 
 - Node.js, npm
 - MongoDB
@@ -45,7 +45,7 @@
 
 
 
-### ساختار پروژه 
+## ساختار پروژه 
 ```bash
 freelancer-app/
 ├── freelancer-app-frontend/
