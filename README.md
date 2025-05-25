@@ -40,7 +40,8 @@
 - cd freelancer-app-backend
 - npm install
 - npm run start
-
+###
+###
 - RUN FRONTEND =>
 - cd freelancer-app-frontend
 - npm install
