@@ -18,7 +18,9 @@
 - اعتبارسنجی فرم‌ها با استفاده از **React Hook Form**
 - دریافت و مدیریت داده‌ها با **React Query**
 
-## 🛠️ تکنولوژی‌های استفاده شده
+
+
+### 🛠️ تکنولوژی‌های استفاده شده
 
 ## فرانت‌اند
 
@@ -34,8 +36,15 @@
 - [MongoDB](https://www.mongodb.com/)
 
 ## ⚙️ نحوه اجرا
-- RUN BACKEND => npm run start
-- RUN FRONTEND => npm run dev
+- RUN BACKEND =>
+- cd freelancer-app-backend
+- npm install
+- npm run start
+
+- RUN FRONTEND =>
+- cd freelancer-app-frontend
+- npm install
+- npm run dev
 
 ## پیش‌نیازها
 
