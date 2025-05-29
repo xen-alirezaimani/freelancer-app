@@ -1,6 +1,7 @@
 html,
-body {
-  min-height: 100vh;
+body,
+#root {
+  height: 100%;
 }
 
 @font-face {
@@ -10,7 +11,6 @@ body {
   font-display: swap;
   src: url("./assets/fonts/Estedad-Thin.woff2") format("woff2");
 }
-
 @font-face {
   font-family: Estedad-extralight;
   font-style: normal;
@@ -18,7 +18,6 @@ body {
   font-display: swap;
   src: url("./assets/fonts/Estedad-ExtraLight.woff2") format("woff2");
 }
-
 @font-face {
   font-family: Estedad-light;
   font-style: normal;
@@ -26,7 +25,6 @@ body {
   font-display: swap;
   src: url("./assets/fonts/Estedad-Light.woff2") format("woff2");
 }
-
 @font-face {
   font-family: Estedad-regular;
   font-style: normal;
@@ -34,7 +32,6 @@ body {
   font-display: swap;
   src: url("./assets/fonts/Estedad-Regular.woff2") format("woff2");
 }
-
 @font-face {
   font-family: Estedad-medium;
   font-style: normal;
@@ -42,7 +39,6 @@ body {
   font-display: swap;
   src: url("./assets/fonts/Estedad-Medium.woff2") format("woff2");
 }
-
 @font-face {
   font-family: Estedad-semibold;
   font-style: normal;
@@ -50,7 +46,6 @@ body {
   font-display: swap;
   src: url("./assets/fonts/Estedad-SemiBold.woff2") format("woff2");
 }
-
 @font-face {
   font-family: Estedad-bold;
   font-style: normal;
@@ -58,7 +53,6 @@ body {
   font-display: swap;
   src: url("./assets/fonts/Estedad-Bold.woff2") format("woff2");
 }
-
 @font-face {
   font-family: Estedad-extrabold;
   font-style: normal;
@@ -81,7 +75,6 @@ body {
   --font-estedad-bold: "Estedad-bold", sans-serif;
   --font-estedad-extrabold: "Estedad-extrabold", sans-serif;
   /* LIGHT MODE */
-  --background-app-rgb: #ffffff;
   --color-primary-900: #4a6dff;
   --color-primary-800: #5c7cff;
   --color-primary-700: #6e8aff;
@@ -103,11 +96,6 @@ body {
   --color-secondary-100: #f3f4f6;
   --color-secondary-50: #f9fafb;
   --color-secondary-0: #ffffff;
-  --color-success: #00c073;
-  --color-warning: #ff9900;
-  --color-error: #ff4757;
-  --color-red-500: #ef4444;
-  --color-red-300: #fca5a5;
   /* DARK MODE */
   --color-dark-secondary-900: #f9fafb;
   --color-dark-secondary-800: #f3f4f6;
@@ -120,5 +108,23 @@ body {
   --color-dark-secondary-100: #1f2937;
   --color-dark-secondary-50: #111827;
   --color-dark-secondary-0: #18212f;
+  /* STATUS */
+  --color-success: #00c073;
+  --color-warning: #ff9900;
+  --color-error: #ff4757;
+  --color-red-500: #ef4444;
+  --color-red-300: #fca5a5;
   --backdrop-color: #000000;
+}
+
+@layer components {
+  .textField__input {
+    @apply w-full h-full px-4 py-3 rounded-xl outline-none border border-gray-300 hover:border-primary-500 focus:border-primary-500 text-secondary-900 transition-all duration-300 ease-out;
+  }
+  .btn {
+    @apply w-full px-4 py-3 rounded-xl font-bold cursor-pointer transition-all duration-300;
+  }
+  .btn--primary {
+    @apply text-secondary-200 hover:text-white bg-primary-900 shadow-primary-300 shadow-lg hover:bg-primary-800;
+  }
 }
