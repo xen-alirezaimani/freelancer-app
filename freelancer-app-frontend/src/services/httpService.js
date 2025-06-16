@@ -1,4 +1,4 @@
-import { axios } from "./../../node_modules/axios/dist/esm/axios";
+import axios from "./../../node_modules/axios/dist/esm/axios";
 
 const app = axios.create({
   baseURL: "http://localhost:5000/api",
