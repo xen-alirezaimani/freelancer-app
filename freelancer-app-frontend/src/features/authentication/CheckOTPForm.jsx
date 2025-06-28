@@ -24,9 +24,9 @@ export default function CheckOTPForm({ phoneNumber, onReSendOtp, otpResponse, on
       toast.success(message);
       if (!user.isActive) return navigate("/complete-profile");
       if (user.status !== 2) return navigate("/");
-      if (user.role == "OWNER") return navigate("owner");
-      if (user.role == "FREELANCER") return navigate("freelancer");
-      if (user.role == "ADMIN") return navigate("admin");
+      if (user.role == "OWNER") return navigate("/owner");
+      if (user.role == "FREELANCER") return navigate("/freelancer");
+      if (user.role == "ADMIN") return navigate("/admin");
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }
@@ -53,7 +53,7 @@ export default function CheckOTPForm({ phoneNumber, onReSendOtp, otpResponse, on
           </p>
           <p>
             شماره موبایل اشتباه است؟
-            <button onClick={onBack} className="mx-1 cursor-pointer text-primary-900">
+            <button type="button" onClick={onBack} className="mx-1 cursor-pointer text-primary-900">
               ویرایش شماره
             </button>
           </p>
@@ -83,7 +83,7 @@ export default function CheckOTPForm({ phoneNumber, onReSendOtp, otpResponse, on
             ) : (
               <span className="flex gap-2">
                 <p>کد را دریافت نکردید؟</p>
-                <button onClick={handleResendOtp} className="cursor-pointer text-primary-900">
+                <button type="submit" onClick={handleResendOtp} className="cursor-pointer text-primary-900">
                   ارسال مجدد
                 </button>
               </span>

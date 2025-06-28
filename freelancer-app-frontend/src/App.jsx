@@ -1,10 +1,12 @@
-import { Routes, Route } from "react-router-dom";
-import Auth from "./pages/Auth";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "react-hot-toast";
-import CompleteProfile from "./pages/CompleteProfile";
 import Home from "./pages/Home";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
+import { Toaster } from "react-hot-toast";
+import Freelancer from "./pages/Freelancer";
+import { Routes, Route } from "react-router-dom";
+import CompleteProfile from "./pages/CompleteProfile";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AppLayout from "./ui/AppLayout";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +20,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/complete-profile" element={<CompleteProfile />} />
+          <Route element={<AppLayout />}>
+            <Route path="/freelancer" element={<Freelancer />} />
+            <Route path="/owner" element={<Freelancer />} />
+            <Route path="/admin" element={<Freelancer />} />
+          </Route>
         </Routes>
       </div>
     </QueryClientProvider>
