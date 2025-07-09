@@ -1,33 +1,32 @@
 import Home from "./pages/Home";
 import Auth from "./pages/Auth";
+import AppLayout from "./ui/AppLayout";
 import NotFound from "./pages/NotFound";
+import Projects from "./pages/Projects";
 import { Toaster } from "react-hot-toast";
 import Freelancer from "./pages/Freelancer";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import SingleProject from "./pages/SingleProject";
+import OwnerDashboard from "./pages/OwnerDashboard";
 import CompleteProfile from "./pages/CompleteProfile";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import AppLayout from "./ui/AppLayout";
-
-const queryClient = new QueryClient();
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Toaster />
-      <div className="container h-full mx-auto">
-        <Routes>
-          <Route path="*" element={<NotFound />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/complete-profile" element={<CompleteProfile />} />
-          <Route element={<AppLayout />}>
-            <Route path="/freelancer" element={<Freelancer />} />
-            <Route path="/owner" element={<Freelancer />} />
-            <Route path="/admin" element={<Freelancer />} />
-          </Route>
-        </Routes>
-      </div>
-    </QueryClientProvider>
+      <Routes>
+        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/complete-profile" element={<CompleteProfile />} />
+        <Route path="/owner" element={<AppLayout />}>
+          <Route index element={<Navigate to="dashboard" replace />} />
+          <Route path="dashboard" element={<OwnerDashboard />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="projects/:id" element={<SingleProject />} />
+        </Route>
+      </Routes>
+    </>
   );
 
   // return (
