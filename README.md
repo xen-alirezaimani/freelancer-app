@@ -30,7 +30,7 @@
 - [React Query](https://tanstack.com/query/latest)
 - [Compound Component Pattern](https://www.patterns.dev/react/)
 
-### بک‌اند
+### بک‌اند (fronthooks.com)
 
 - [Node.js](https://nodejs.org/)
 - [Express.js](https://expressjs.com/)
