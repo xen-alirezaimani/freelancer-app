@@ -1,8 +1,18 @@
 import truncateText from "../../utils/truncateText";
 import toLocalDateShort from "../../utils/toLocalDateShort";
 import { toPersianNumber } from "../../utils/toPersianNumber";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { TbPencil } from "react-icons/tb";
+import Modal from "../../ui/Modal";
+import { useState } from "react";
+import ConfirmDelete from "../../ui/ConfirmDelete";
+import useRemoveProject from "./useRemoveProject";
 
 export default function ProjectRow({ project, index }) {
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const { removeProject, isDeleting } = useRemoveProject();
+
   return (
     <>
       <td>{index + 1}</td>
@@ -27,7 +37,38 @@ export default function ProjectRow({ project, index }) {
           <span className="badge badge--danger">بسته</span>
         )}
       </td>
-      <td>...</td>
+      <td>
+        <div className="flex items-center gap-x-4">
+          <>
+            <button onClick={() => setIsDeleteOpen(true)} className="cursor-pointer">
+              <FaRegTrashAlt className="w-5 h-5 text-primary-900" />
+            </button>
+            <Modal title={`حذف پروژه ${project.title}`} open={isDeleteOpen} onClose={() => setIsDeleteOpen(false)}>
+              <ConfirmDelete
+                resourceName={project.title}
+                onClose={() => setIsDeleteOpen(false)}
+                disabled={false}
+                onConfirm={() =>
+                  removeProject(project._id, {
+                    onSuccess: () => {
+                      setIsDeleteOpen(false);
+                    },
+                  })
+                }
+              />
+            </Modal>
+          </>
+
+          <>
+            <button onClick={() => setIsEditOpen(true)} className="cursor-pointer">
+              <TbPencil className="w-5 h-5 text-error" />
+            </button>
+            <Modal title={`ویرایش پروژه ${project.title}`} open={isEditOpen} onClose={() => setIsEditOpen(false)}>
+              this is the modal
+            </Modal>
+          </>
+        </div>
+      </td>
     </>
   );
 }

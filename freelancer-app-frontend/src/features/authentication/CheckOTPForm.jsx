@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../ui/Loading";
 
-const RESEND_TIME = 90;
+const RESEND_TIME = 60;
 
 export default function CheckOTPForm({ phoneNumber, onReSendOtp, otpResponse, onBack }) {
   const [otp, setOtp] = useState("");
@@ -83,7 +83,7 @@ export default function CheckOTPForm({ phoneNumber, onReSendOtp, otpResponse, on
             ) : (
               <span className="flex gap-2">
                 <p>کد را دریافت نکردید؟</p>
-                <button type="submit" onClick={handleResendOtp} className="cursor-pointer text-primary-900">
+                <button type="button" onClick={handleResendOtp} className="cursor-pointer text-primary-900">
                   ارسال مجدد
                 </button>
               </span>

@@ -2,7 +2,7 @@ import TextField from "../../ui/TextField";
 import Loading from "../../ui/Loading";
 import { useNavigate } from "react-router-dom";
 
-export default function SendOTPForm({ onSubmit, isSendingOtp, phoneNumber, onChange }) {
+export default function SendOTPForm({ onSubmit, isSendingOtp, register }) {
   const navigate = useNavigate();
 
   return (
@@ -13,7 +13,7 @@ export default function SendOTPForm({ onSubmit, isSendingOtp, phoneNumber, onCha
         </button>
         <p className="font-bold text-secondary-800">شماره خود را وارد کنید</p>
         <div className="relative h-10">
-          <TextField name="phoneNumber" label="شماره موبایل" value={phoneNumber} onChange={onChange} />
+          <TextField name="phoneNumber" label="شماره موبایل" register={register} required />
         </div>
         <>
           {isSendingOtp ? (
