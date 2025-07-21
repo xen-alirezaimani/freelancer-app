@@ -85,7 +85,7 @@ freelancer-app/
 └── README.md
 
 
-### کلون کردن مخزن
+ کلون کردن مخزن
 
 git clone https://github.com/your-username/freelancer-app.git
 cd freelancer-app
