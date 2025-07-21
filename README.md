@@ -61,18 +61,18 @@ freelancer-app/
 ├── freelancer-app-frontend/
 │   ├── public/
 │   ├── src/
-|   |   └── assets/
-|   |   ├── components/
-|   |   ├── features/
-|   |   ├── pages/
-|   |   ├── hooks/
-|   |   ├── services/
-|   |   ├── ui/
-|   |   ├── utils/
-|   |   └── styles/
-|   |   ├── App.jsx
-|   |   ├── main.jsx
-|   |   ├── style.css
+│   │   └── assets/
+│   │   ├── components/
+│   │   ├── features/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   ├── ui/
+│   │   ├── utils/
+│   │   └── styles/
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   ├── style.css
 │   └── index.html
 │
 ├── freelancer-app-backend/
