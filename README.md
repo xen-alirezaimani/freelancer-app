@@ -61,24 +61,28 @@ freelancer-app/
 ├── freelancer-app-frontend/
 │   ├── public/
 │   ├── src/
+|   |   └── assets/
 |   |   ├── components/
+|   |   ├── features/
 |   |   ├── pages/
 |   |   ├── hooks/
 |   |   ├── services/
+|   |   ├── ui/
+|   |   ├── utils/
+|   |   └── styles/
 |   |   ├── App.jsx
 |   |   ├── main.jsx
 |   |   ├── style.css
-|   |   └── assets/
 │   └── index.html
 │
-├── freelancer-app-backend/     # backend
-│   ├── controllers/            # کنترلرهای مربوط به API
-│   ├── models/                 # مدل‌های Mongoose
-│   ├── routes/                 # مسیرهای API
-│   ├── middlewares/            # میدلورها (احراز هویت، رول‌ها و ...)
-│   └── server.js               # نقطه ورود سرور
+├── freelancer-app-backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middlewares/
+│   └── server.js       
 │
-└── README.md                   # project readme
+└── README.md
 
 
 ### کلون کردن مخزن
