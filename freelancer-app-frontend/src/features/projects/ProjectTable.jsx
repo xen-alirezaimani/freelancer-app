@@ -8,8 +8,6 @@ import CreateProjectForm from "./CreateProjectForm";
 export default function ProjectsTable() {
   const { projects, isLoading } = useOwnerProjects();
 
-  console.log(projects);
-
   // ? if isLoading => Loader
   // ? else if projects.length = 0 => empty ...
   // ? else => show projects
@@ -19,8 +17,6 @@ export default function ProjectsTable() {
 
   return (
     <>
-      <CreateProjectForm />
-
       <Table>
         <Table.Header>
           <th>#</th>

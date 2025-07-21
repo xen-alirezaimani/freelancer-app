@@ -18,7 +18,7 @@ export default function TextField({ label, name, register, validationSets = {}, 
             peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-blue-500"
       >
         <div className="flex gap-x-1">
-          {required && <p>*</p>}
+          {required && <p className="text-error">*</p>}
           <p>{label}</p>
           {errors && errors[name] && <p className="text-error">{errors[name]?.message}</p>}
         </div>

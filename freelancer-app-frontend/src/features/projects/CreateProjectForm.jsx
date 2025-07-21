@@ -1,7 +1,12 @@
+import { useState } from "react";
+import RHFSelect from "../../ui/RHFSelect";
 import TextField from "./../../ui/TextField";
 import { useForm } from "react-hook-form";
+import TagInput from "../../ui/TagInput";
 
 export default function CreateProjectForm() {
+  const [tags, setTags] = useState([]);
+
   const {
     register,
     formState: { errors },
@@ -13,7 +18,7 @@ export default function CreateProjectForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="h-50 flex flex-col gap-y-8">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-5">
       <div className="h-10 relative">
         <TextField
           label="نام پروژه"
@@ -27,6 +32,41 @@ export default function CreateProjectForm() {
             maxLength: { value: 50, message: "طول عنوان نامعتبر است" },
           }}
         />
+      </div>
+
+      <div className="h-10 relative">
+        <TextField
+          label="توضیحات"
+          name="description"
+          register={register}
+          required
+          errors={errors}
+          validationSets={{
+            required: "توضیحات ضروری است",
+            minLength: { value: 10, message: "حداقل 10 کراکتر وارد کنید" },
+          }}
+        />
+      </div>
+
+      <div className="h-10 relative">
+        <TextField
+          label="بودجه"
+          name="budget"
+          type="number"
+          register={register}
+          required
+          errors={errors}
+          validationSets={{
+            required: "بودجه ضروری است",
+            minLength: { value: 0, message: "حداقل 5 کراکتر وارد کنید" },
+          }}
+        />
+      </div>
+
+      <TagInput tags={tags} setTags={setTags} />
+
+      <div className="mb-10">
+        <RHFSelect name="category" label="دسته بندی" register={register} errors={errors} required options={[]} />
       </div>
 
       <div>
