@@ -13,16 +13,23 @@ export default function TagInput({ tags = [], setTags }) {
     setInputValue("");
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      const trimmed = inputValue.trim();
+      if (trimmed && !tags.includes(trimmed)) {
+        e.preventDefault();
+        handleAddTag();
+      }
+    }
+  };
+
   const handleRemoveTag = (tagToRemove) => {
     setTags(tags.filter((tag) => tag !== tagToRemove));
   };
 
   return (
     <div className="w-full">
-      <label htmlFor="" className="mb-1 block">
-        افزودن تگ
-      </label>
-      <div className="h-30 overflow-y-scroll flex items-center flex-wrap gap-3 px-4 py-2 my-4 border border-gray-300 border-solid rounded-2xl">
+      <div className="h-20 overflow-y-auto flex items-center flex-wrap gap-3 px-4 py-2 mb-2 border border-gray-300 border-solid rounded-2xl">
         {tags.map((tag) => (
           <div key={tag} className="h-10 flex items-center p-2 rounded-2xl text-primary-900 bg-secondary-100">
             {tag}
@@ -39,6 +46,7 @@ export default function TagInput({ tags = [], setTags }) {
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={handleKeyDown}
             placeholder="جاوا اسکریپت"
             className="textField__input"
           />

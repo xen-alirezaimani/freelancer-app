@@ -3,15 +3,19 @@ import RHFSelect from "../../ui/RHFSelect";
 import TextField from "./../../ui/TextField";
 import { useForm } from "react-hook-form";
 import TagInput from "../../ui/TagInput";
+import DatePickerField from "../../ui/DatePickerField";
+import useCategories from "../../hooks/useCategories";
 
 export default function CreateProjectForm() {
-  const [tags, setTags] = useState([]);
-
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+
+  const [tags, setTags] = useState([]);
+  const [date, setDate] = useState(new Date());
+  const { categories, isLoading } = useCategories();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -63,11 +67,13 @@ export default function CreateProjectForm() {
         />
       </div>
 
+      <div>
+        <RHFSelect name="category" label="دسته بندی" register={register} errors={errors} required options={categories} />
+      </div>
+
       <TagInput tags={tags} setTags={setTags} />
 
-      <div className="mb-10">
-        <RHFSelect name="category" label="دسته بندی" register={register} errors={errors} required options={[]} />
-      </div>
+      <DatePickerField date={date} setDate={setDate} label="ددلاین" />
 
       <div>
         <button type="submit" className="btn btn--primary w-full">
