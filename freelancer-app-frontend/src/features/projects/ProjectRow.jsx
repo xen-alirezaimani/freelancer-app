@@ -3,12 +3,14 @@ import toLocalDateShort from "../../utils/toLocalDateShort";
 import { toPersianNumber } from "../../utils/toPersianNumber";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { TbPencil } from "react-icons/tb";
+import { HiEye } from "react-icons/hi";
 import Modal from "../../ui/Modal";
 import { useState } from "react";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import useRemoveProject from "./useRemoveProject";
 import CreateProjectForm from "./CreateProjectForm";
 import ToggleProjectStatus from "../../ui/ToggleProjectStatus";
+import { Link } from "react-router-dom";
 
 export default function ProjectRow({ project, index }) {
   const [isEditOpen, setIsEditOpen] = useState(false);
@@ -36,7 +38,7 @@ export default function ProjectRow({ project, index }) {
         <ToggleProjectStatus project={project} />
       </td>
       <td>
-        <div className="flex items-center gap-x-4">
+        <div className="flex items-center justify-center gap-x-4">
           <>
             <button onClick={() => setIsDeleteOpen(true)} className="cursor-pointer">
               <FaRegTrashAlt className="w-5 h-5 text-primary-900" />
@@ -66,6 +68,11 @@ export default function ProjectRow({ project, index }) {
             </Modal>
           </>
         </div>
+      </td>
+      <td>
+        <Link to={project._id} className="flex justify-center items-center">
+          <HiEye className="w-5 h-5 text-primary-900" />
+        </Link>
       </td>
     </>
   );

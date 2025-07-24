@@ -7,12 +7,11 @@ export default function ToggleProjectStatus({ project }) {
   const handleToggle = () => {
     const newStatus = project.status == "OPEN" ? "CLOSED" : "OPEN";
     toggleProjectStatus({ id: project._id, data: { status: newStatus } });
-    console.log(project.status);
   };
 
   return (
-    <>
+    <div className="flex justify-center items-center">
       <ToggleSwich onChange={handleToggle} status={project.status} />
-    </>
+    </div>
   );
 }

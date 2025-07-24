@@ -168,8 +168,8 @@ table .title-row {
 table td,
 table th {
   border-bottom: 1px solid rgb(var(--color-secondary-200));
-  text-align: right;
   white-space: nowrap;
+  text-align: center;
 }
 table th {
   padding: 0.6rem 1rem;
