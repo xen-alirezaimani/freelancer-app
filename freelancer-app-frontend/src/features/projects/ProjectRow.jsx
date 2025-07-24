@@ -7,6 +7,8 @@ import Modal from "../../ui/Modal";
 import { useState } from "react";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import useRemoveProject from "./useRemoveProject";
+import CreateProjectForm from "./CreateProjectForm";
+import ToggleProjectStatus from "../../ui/ToggleProjectStatus";
 
 export default function ProjectRow({ project, index }) {
   const [isEditOpen, setIsEditOpen] = useState(false);
@@ -31,11 +33,7 @@ export default function ProjectRow({ project, index }) {
       </td>
       <td>{project.freelancer?.name || ""}</td>
       <td>
-        {project.status == "OPEN" ? (
-          <span className="badge badge--success">باز</span>
-        ) : (
-          <span className="badge badge--danger">بسته</span>
-        )}
+        <ToggleProjectStatus project={project} />
       </td>
       <td>
         <div className="flex items-center gap-x-4">
@@ -64,7 +62,7 @@ export default function ProjectRow({ project, index }) {
               <TbPencil className="w-5 h-5 text-error" />
             </button>
             <Modal title={`ویرایش پروژه ${project.title}`} open={isEditOpen} onClose={() => setIsEditOpen(false)}>
-              this is the modal
+              <CreateProjectForm projectToEdit={project} onclose={() => setIsEditOpen(false)} />
             </Modal>
           </>
         </div>

@@ -14,7 +14,7 @@ export default function Projects() {
         </button>
 
         <Modal title="افزودن پروژه جدید" open={addNewProjectOpen} onClose={() => setAddNewProjectOpen(false)}>
-          <CreateProjectForm />
+          <CreateProjectForm onclose={() => setAddNewProjectOpen(false)} />
         </Modal>
       </div>
 

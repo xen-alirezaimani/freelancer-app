@@ -5,20 +5,54 @@ import { useForm } from "react-hook-form";
 import TagInput from "../../ui/TagInput";
 import DatePickerField from "../../ui/DatePickerField";
 import useCategories from "../../hooks/useCategories";
+import useCreateProject from "./useCreateProject";
+import Loading from "../../ui/Loading";
+import useEditProject from "./useEditProject";
 
-export default function CreateProjectForm() {
+export default function CreateProjectForm({ projectToEdit = {}, onclose }) {
+  const { _id: editId } = projectToEdit;
+  const isEditSession = Boolean(editId);
+
+  const { title, description, tags: prevTags, category, budget, deadline } = projectToEdit;
+  let editValues = {};
+  if (isEditSession) {
+    editValues = { title, description, tags: prevTags, category: category._id, budget, deadline };
+  }
+
+  const [tags, setTags] = useState(prevTags || []);
+  const [date, setDate] = useState(new Date(deadline || ""));
+  const { categories, isLoading } = useCategories();
+  const { isEditing, editProject } = useEditProject();
+  const { createProject, isCreating } = useCreateProject();
+
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
-
-  const [tags, setTags] = useState([]);
-  const [date, setDate] = useState(new Date());
-  const { categories, isLoading } = useCategories();
+    reset,
+  } = useForm({ defaultValues: editValues });
 
   const onSubmit = (data) => {
-    console.log(data);
+    const newProject = { ...data, deadline: new Date(date).toISOString(), tags };
+
+    if (isEditSession) {
+      editProject(
+        { id: editId, newProject },
+        {
+          onSuccess: () => {
+            onclose();
+            reset();
+          },
+        }
+      );
+    } else {
+      createProject(newProject, {
+        onSuccess: () => {
+          onclose();
+          reset();
+        },
+      });
+    }
   };
 
   return (
@@ -26,7 +60,7 @@ export default function CreateProjectForm() {
       <div className="h-10 relative">
         <TextField
           label="نام پروژه"
-          name="projectTitle"
+          name="title"
           register={register}
           required
           errors={errors}
@@ -76,9 +110,13 @@ export default function CreateProjectForm() {
       <DatePickerField date={date} setDate={setDate} label="ددلاین" />
 
       <div>
-        <button type="submit" className="btn btn--primary w-full">
-          تایید
-        </button>
+        {isCreating ? (
+          <Loading />
+        ) : (
+          <button type="submit" className="btn btn--primary w-full">
+            تایید
+          </button>
+        )}
       </div>
     </form>
   );
