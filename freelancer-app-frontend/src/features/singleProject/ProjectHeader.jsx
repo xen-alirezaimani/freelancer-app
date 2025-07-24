@@ -1,6 +1,3 @@
-
-export default function ProjectHeader() {
-  return (
-    <div>ProjectHeader</div>
-  )
+export default function ProjectHeader({ project }) {
+  return <div>ProjectHeader</div>;
 }

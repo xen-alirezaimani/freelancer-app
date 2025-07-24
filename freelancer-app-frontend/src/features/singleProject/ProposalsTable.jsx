@@ -1,6 +1,3 @@
-
-export default function ProposalsTable() {
-  return (
-    <div>ProposalsTable</div>
-  )
+export default function ProposalsTable({ proposals }) {
+  return <div>ProposalsTable</div>;
 }
