@@ -1,4 +1,7 @@
 import truncateText from "./../../utils/truncateText";
+import Modal from "./../../ui/Modal";
+import { useState } from "react";
+import ChangeProposalStatus from "./ChangeProposalStatus";
 
 const statusMap = {
   0: { label: "رد شده", className: "badge--danger" },
@@ -7,7 +10,8 @@ const statusMap = {
 };
 
 export default function ProposalRow({ proposal, index }) {
-  const { status, user, description, duration, price } = proposal;
+  const [openModal, setOpenModal] = useState(false);
+  const { _id, status, user, description, duration, price } = proposal;
 
   return (
     <>
@@ -18,6 +22,14 @@ export default function ProposalRow({ proposal, index }) {
       <td>{price}</td>
       <td>
         <span className={`badge ${statusMap[status].className}`}>{statusMap[status].label}</span>
+      </td>
+      <td>
+        <Modal open={openModal} onClose={() => setOpenModal(false)} title="">
+          <ChangeProposalStatus proposalId={_id} onClose={() => setOpenModal(false)} />
+        </Modal>
+        <button onClick={() => setOpenModal(true)} className="cursor-pointer">
+          تغییر وضعیت
+        </button>
       </td>
     </>
   );

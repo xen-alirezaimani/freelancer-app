@@ -8,8 +8,6 @@ export default function SingleProject() {
 
   if (isLoading) return <Loading />;
 
-  console.log(project);
-
   return (
     <div>
       <ProjectHeader project={project} />

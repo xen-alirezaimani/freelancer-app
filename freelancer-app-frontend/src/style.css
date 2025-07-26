@@ -181,3 +181,6 @@ table td {
   color: rgb(var(--color-secondary-600));
   font-size: 0.85rem;
 }
+option {
+  font-family: estedad;
+}
