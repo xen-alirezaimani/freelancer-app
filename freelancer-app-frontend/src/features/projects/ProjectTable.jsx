@@ -3,7 +3,6 @@ import useOwnerProjects from "./useOwnerProjects";
 import Loading from "./../../ui/Loading";
 import Empty from "./../../ui/Empty";
 import ProjectRow from "./ProjectRow";
-import CreateProjectForm from "./CreateProjectForm";
 
 export default function ProjectsTable() {
   const { projects, isLoading } = useOwnerProjects();
