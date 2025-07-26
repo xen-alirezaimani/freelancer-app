@@ -5,7 +5,6 @@ import ProposalRow from "./ProposalRow";
 export default function ProposalsTable({ proposals }) {
   if (!proposals.length) return <Empty resourceName="لیست درخواست ها" />;
 
-  console.log(proposals);
   return (
     <div>
       <Table>
