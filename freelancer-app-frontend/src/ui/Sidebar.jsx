@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import ThemeToggle from "../components/ThemeToggle";
+import { MdOutlineSpaceDashboard } from "react-icons/md";
+import { GoProjectSymlink } from "react-icons/go";
 
 export default function Sidebar({ isOpen, setIsOpen }) {
   const handleCloseSidebar = () => {
@@ -12,15 +13,16 @@ export default function Sidebar({ isOpen, setIsOpen }) {
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      <ThemeToggle />
       <ul className="flex flex-col gap-y-1">
         <li className="text-secondary-600 dark:text-dark-secondary-600">
           <NavItem to="dashboard" handleCloseSidebar={handleCloseSidebar}>
+            <MdOutlineSpaceDashboard className="w-5 h-5" />
             <span>داشبورد</span>
           </NavItem>
         </li>
         <li className="text-secondary-600 dark:text-dark-secondary-600">
           <NavItem to="projects" handleCloseSidebar={handleCloseSidebar}>
+            <GoProjectSymlink className="w-5 h-5" />
             <span>پروژه ها</span>
           </NavItem>
         </li>
@@ -35,7 +37,7 @@ function NavItem({ children, to, handleCloseSidebar }) {
       <NavLink
         to={to}
         onClick={handleCloseSidebar}
-        className={`flex items-center gap-x-2 p-2 rounded-md transition-all duration-300 hover:bg-primary-100/50 dark:hover:bg-primary-300 hover:text-primary-900 ${({
+        className={`flex items-center gap-x-1 p-2 rounded-md transition-all duration-300 hover:bg-primary-100/50 dark:hover:bg-primary-300 hover:text-primary-900 ${({
           isActive,
         }) => (isActive ? "active" : "")}`}
       >

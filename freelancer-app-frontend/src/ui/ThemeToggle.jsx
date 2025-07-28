@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState(() => {
@@ -14,5 +15,5 @@ export default function ThemeToggle() {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
-  return <button onClick={toggleTheme}>تغییر به حالت {theme === "dark" ? "روشن" : "تاریک"}</button>;
+  return <button onClick={toggleTheme} className="flex items-center cursor-pointer transition-all duration-300">{theme === "dark" ? <IoSunnyOutline className="w-5 h-5" /> : <IoMoonOutline className="w-5 h-5" />}</button>;
 }
