@@ -1,8 +1,7 @@
-import { NavLink } from "react-router-dom";
-import { HiOutlineUser } from "react-icons/hi";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import ThemeToggle from "./ThemeToggle";
 import Logout from "../features/authentication/Logout";
+import { Link } from "react-router-dom";
 
 export default function HeaderMenu() {
   return (
@@ -29,13 +28,8 @@ export default function HeaderMenu() {
 
 function NavItem({ children, to }) {
   return (
-    <NavLink
-      to={to}
-      className={`flex items-center gap-x-1 p-2 rounded-md transition-all duration-300 bg-secondary-0 hover:text-primary-900 ${({
-        isActive,
-      }) => (isActive ? "active" : "")}`}
-    >
+    <Link to={to} className={`flex items-center gap-x-1 p-2 rounded-md transition-all duration-300 hover:text-primary-900`}>
       {children}
-    </NavLink>
+    </Link>
   );
 }

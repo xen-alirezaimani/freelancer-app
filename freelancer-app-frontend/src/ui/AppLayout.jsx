@@ -9,7 +9,7 @@ export default function AppLayout() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-secondary-100 dark:bg-secondary-700">
       <AppHeader setIsOpen={setIsOpen} />
 
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />

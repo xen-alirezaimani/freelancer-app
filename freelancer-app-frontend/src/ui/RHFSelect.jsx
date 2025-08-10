@@ -9,9 +9,9 @@ export default function RHFSelect({ name, label, register, required, options, er
         </div>
       </label>
       <div className="h-10">
-        <select className="textField__input py-1" {...register(name)} id={name}>
+        <select className="textField__input py-1 bg-secondary-0 dark:bg-secondary-600" {...register(name)} id={name}>
           {options.map((opt) => (
-            <option key={opt.value} value={opt.value}>
+            <option key={opt.value} value={opt.value} className="dark:bg-secondary-600">
               {opt.label}
             </option>
           ))}

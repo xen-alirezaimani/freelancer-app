@@ -8,11 +8,11 @@ export default function AppHeader({ setIsOpen }) {
   const { isLoading } = useUser();
 
   return (
-    <header className={`w-full bg-secondary-0 border-1 border-secondary-200 ${isLoading ? "blur-sm opacity-100" : ""}`}>
+    <header className={`w-full bg-secondary-0 dark:bg-secondary-800 border-1 border-secondary-200 dark:border-secondary-900 ${isLoading ? "blur-sm opacity-100" : ""}`}>
       <Container>
         <div className="h-16 flex items-center justify-between">
           <button onClick={() => setIsOpen((prev) => !prev)} className="flex items-center justify-center cursor-pointer">
-            <RxHamburgerMenu className="w-7 h-7" />
+            <RxHamburgerMenu className="w-7 h-7 text-secondary-900 dark:text-secondary-0" />
           </button>
           <HeaderMenu />
           <UserAvatar />
